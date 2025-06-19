@@ -69,6 +69,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
+            <View style={styles.mainContent}>
             <StatusBar style="dark" />
             <Text style={styles.title}>Cross score tracker :D</Text>
             <FlatList
@@ -129,6 +130,7 @@ export default function App() {
                     )}
                 </View>
             </View>
+            </View>
         </View>
     );
 }
@@ -141,14 +143,25 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: 24,
     },
+    mainContent: {
+        borderRadius: 16,
+        backgroundColor: "#F6F8FAFF",
+        width: "100%",
+        maxWidth: 500,
+        alignSelf: "center",
+        padding: 40,
+        height: "100%",
+        minHeight: 320,
+    },
     container: {
         flex: 1,
-        backgroundColor: "#f6f8fa",
+        backgroundColor: "#ffffff",//"#f6f8fa",
         padding: 20,
-        paddingTop: 60,
+        paddingTop: 20,
     },
     playerRow: {
         flexDirection: "row",
+        //flexGrow: 1,
         alignItems: "center",
         backgroundColor: "#fff",
         borderRadius: 16,
@@ -162,6 +175,9 @@ const styles = StyleSheet.create({
     },
     nameInput: {
         flex: 1,
+        maxWidth: "60%",
+        minWidth: "30%",
+        flexShrink: 1,
         fontSize: 18,
         borderWidth: 0,
         backgroundColor: "#f0f4f8",
@@ -191,6 +207,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#222",
         fontWeight: "600",
+        paddingHorizontal: 5,
     },
     removeButton: {
         marginLeft: 10,
