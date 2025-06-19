@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
-import { View, Text, Button, TextInput, StyleSheet, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, /*Button,*/ TextInput, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import * as Haptics from "expo-haptics";
 import { StatusBar } from "expo-status-bar";
+import {Image} from "expo-image";
 
 type Player = {
     id: number;
@@ -71,7 +72,7 @@ export default function App() {
         <View style={styles.container}>
             <View style={styles.mainContent}>
             <StatusBar style="dark" />
-            <Text style={styles.title}>Cross score tracker :D</Text>
+            <Text style={styles.title}>Cruce score tracker</Text>
             <FlatList
                 data={players}
                 keyExtractor={(item) => item.id.toString()}
@@ -83,15 +84,20 @@ export default function App() {
                             onChangeText={(text) => updateName(item.id, text)}
                         />
                         <TouchableOpacity onPress={() => updateScore(item.id, -1)} style={styles.button}>
-                            <Text style={styles.buttonText}>-</Text>
+                            {/*<Text style={styles.buttonText}>-</Text>*/}
+                            <Image source={"./assets/assets/images/remove_24dp_3730A3_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
                         </TouchableOpacity>
                         <Text style={styles.score}>{item.score}</Text>
                         <TouchableOpacity onPress={() => updateScore(item.id, 1)} style={styles.button}>
-                            <Text style={styles.buttonText}>+</Text>
+                            {/*<Text style={styles.buttonText}>+</Text>*/}
+                            <Image source={"./assets/assets/images/add_24dp_3730A3_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
+
+
                         </TouchableOpacity>
                         {players.length > 2 && (
                             <TouchableOpacity onPress={() => removePlayer(item.id)} style={styles.removeButton}>
-                                <Text style={styles.removeButtonText}>❌</Text>
+                                {/*<Text style={styles.removeButtonText}>Rm</Text>*/}
+                                <Image source={"./assets/assets/images/close_24dp_B91C1C_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
                             </TouchableOpacity>
                         )}
                     </View>
@@ -189,12 +195,13 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: "#e0e7ff",
-        borderRadius: 8,
+        borderRadius: 10,
         paddingHorizontal: 16,
         paddingVertical: 8,
         marginHorizontal: 4,
         alignItems: "center",
         justifyContent: "center",
+        aspectRatio: 1.05,
     },
     buttonText: {
         fontSize: 22,
@@ -210,10 +217,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
     },
     removeButton: {
-        marginLeft: 10,
+        marginLeft: 8,
         backgroundColor: "#fee2e2",
         borderRadius: 8,
-        padding: 8,
+        padding: 4,
+        alignItems: "center",
+        justifyContent: "center",
     },
     removeButtonText: {
         fontSize: 10,
