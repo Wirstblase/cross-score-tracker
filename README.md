@@ -14,7 +14,7 @@ This is a very simple web and mobile app that allows you to track your scores in
 
 ### UI Preview
 
-![UI Demo](/assets/images/ui-demo.png)
+![UI Demo](/assets/images/ui-demo-small.png)
 
 ### Why does it exist?
 
