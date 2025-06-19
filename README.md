@@ -4,6 +4,14 @@
 
 This is a very simple web and mobile app that allows you to track your scores in the famous card game "Cruce" (translated as "Cross" in English). 
 
+### Main features
+
+- Keeps score (obviously)
+- 2-4 players (as you cannot play alone, silly!)
+- Idiotproof (no need to explain how to use it)
+
+### UI Preview
+
 ![UI Demo](/assets/images/ui-demo.png)
 
 ### Why does it exist?
