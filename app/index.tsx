@@ -3,6 +3,7 @@ import { View, Text, /*Button,*/ TextInput, StyleSheet, FlatList, TouchableOpaci
 import * as Haptics from "expo-haptics";
 import { StatusBar } from "expo-status-bar";
 import {Image} from "expo-image";
+import { useWindowDimensions } from "react-native";
 
 type Player = {
     id: number;
@@ -11,6 +12,9 @@ type Player = {
 };
 
 export default function App() {
+    const { width, height } = useWindowDimensions();
+    const isPortrait = height >= width;
+
     const [players, setPlayers] = useState<Player[]>([
         { id: 1, name: "Player 1", score: 0 },
         { id: 2, name: "Player 2", score: 0 },
@@ -69,7 +73,11 @@ export default function App() {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={[
+            styles.container,
+            isPortrait && { padding: 0/*, paddingTop: 40*/}
+        ]}
+        >
             <View style={styles.mainContent}>
             <StatusBar style="dark" />
             <Text style={styles.title}>Cruce score tracker</Text>
@@ -86,6 +94,7 @@ export default function App() {
                         <TouchableOpacity onPress={() => updateScore(item.id, -1)} style={styles.button}>
                             {/*<Text style={styles.buttonText}>-</Text>*/}
                             <Image source={"./assets/assets/images/remove_24dp_3730A3_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
+
                         </TouchableOpacity>
                         <Text style={styles.score}>{item.score}</Text>
                         <TouchableOpacity onPress={() => updateScore(item.id, 1)} style={styles.button}>
