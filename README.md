@@ -1,5 +1,7 @@
 ## Welcome to cross score tracker 👋
 
+👉 [Try the Web App!](https://cross-score-tracker.mariussuflea.com/)
+
 this is my very first React Native Expo app, It marks my first milestone in the world of cross-platform mobile development and my migration away from low-level native development.
 
 ### What is this?
