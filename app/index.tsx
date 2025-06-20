@@ -93,20 +93,20 @@ export default function App() {
                         />
                         <TouchableOpacity onPress={() => updateScore(item.id, -1)} style={styles.button}>
                             {/*<Text style={styles.buttonText}>-</Text>*/}
-                            <Image source={"./assets/assets/images/remove_24dp_3730A3_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
+                            <Image source={require("./assets/assets/images/remove.png")} style={{ width: 20, height: 20 }} />
 
                         </TouchableOpacity>
                         <Text style={styles.score}>{item.score}</Text>
                         <TouchableOpacity onPress={() => updateScore(item.id, 1)} style={styles.button}>
                             {/*<Text style={styles.buttonText}>+</Text>*/}
-                            <Image source={"./assets/assets/images/add_24dp_3730A3_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
+                            <Image source={require("./assets/assets/images/add.png")} style={{ width: 20, height: 20 }} />
 
 
                         </TouchableOpacity>
                         {players.length > 2 && (
                             <TouchableOpacity onPress={() => removePlayer(item.id)} style={styles.removeButton}>
                                 {/*<Text style={styles.removeButtonText}>Rm</Text>*/}
-                                <Image source={"./assets/assets/images/close_24dp_B91C1C_FILL0_wght700_GRAD0_opsz24.svg"} style={{ width: 20, height: 20 }} />
+                                <Image source={require("./assets/assets/images/close.png")} style={{ width: 20, height: 20 }} />
                             </TouchableOpacity>
                         )}
                     </View>
@@ -164,7 +164,10 @@ const styles = StyleSheet.create({
         width: "100%",
         maxWidth: 500,
         alignSelf: "center",
-        padding: 40,
+        //padding: 40,
+        padding: "2.5%",
+        paddingTop: "8%",
+        paddingBottom: "2.5%",
         height: "100%",
         minHeight: 320,
     },
