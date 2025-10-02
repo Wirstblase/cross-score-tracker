@@ -20,4 +20,4 @@ This is a very simple web and mobile app that allows you to track your scores in
 
 ### Why does it exist?
 
-Many times I found myself playing Cruce with my friends and nowadays we do not carry pen and paper with us, so we needed a way to keep track of our scores to eliminate cheating and disputes that might arise from "just remembering" it.
+Many times I found myself playing this card game with my friends and nowadays we do not carry pen and paper with us, so we needed a way to keep track of our scores to eliminate cheating and disputes that might arise from "just remembering" it.
